@@ -1,6 +1,6 @@
 # JUnit5-Testing-Showcase
 ## Introduction
-Welcome to my JUnit5 Testing Showcase! This repository demonstrates the skills and knowledge I gained from the Udemy course "Practical Java Unit Testing with JUnit 5." It serves as a portfolio of test cases and scenarios, reflecting best practices in unit testing with JUnit 5. The repository is especially relevant as I prepare for my internship at Nasdaq-Verafin, where I'll be applying these skills.
+Welcome to my JUnit5 Testing Showcase! This repository demonstrates the skills and knowledge I gained from the Udemy course "[Practical Java Unit Testing with JUnit 5](https://www.udemy.com/course/junit5-for-beginners/)." It serves as a portfolio of test cases and scenarios, reflecting best practices in unit testing with JUnit 5. The repository is especially relevant as I prepare for my internship at Nasdaq-Verafin, where I'll be applying these skills.
 
 
 ## What's Inside
@@ -15,4 +15,7 @@ These tests were made using:
   
 ## Acknowledgmenets
 - Udemy Course: "Practical Java Unit Testing with JUnit 5" by Adrien Weich.
-- Nasdaq-Verafin for inspiring the application of these skills in a professional setting.
+- [Nasdaq-Verafin](https://verafin.com/) for inspiring the application of these skills in a professional setting.
+
+## Certification
+[Practical Java Unit Testing with JUnit 5 Certification](https://www.udemy.com/certificate/UC-5493c6db-7b3f-42cf-9448-8d5124041c43/)
