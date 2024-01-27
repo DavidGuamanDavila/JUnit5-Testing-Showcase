@@ -13,7 +13,7 @@ These tests were made using:
 - Java JDK (version 8 or higher)
 - An IDE with JUnit 5 support (like Eclipse or IntelliJ IDEA)
   
-## Acknowledgmenets
+## Acknowledgments
 - Udemy Course: "Practical Java Unit Testing with JUnit 5" by Adrien Weich.
 - [Nasdaq-Verafin](https://verafin.com/) for inspiring the application of these skills in a professional setting.
 
