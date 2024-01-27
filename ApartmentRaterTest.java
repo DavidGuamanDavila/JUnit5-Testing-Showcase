@@ -52,8 +52,12 @@ class ApartmentRaterTest {
 	@Test
 	void should_ThrowExeptionInCalculateAverageRating_When_EmptyApartmentList() {
 		//given
+		List<Apartment> apartments = new ArrayList<>();
 		//when
-		//then	
+		Executable executable = () -> ApartmentRater.calculateAverageRating(apartments);
+		//then
+		assertThrows(RuntimeException.class, executable);
+		
 	}
 
 }
