@@ -37,15 +37,27 @@ class ApartmentRaterTest {
 	@Test
 	void should_CalculateAverageRating_When_CorrectApartmentList() {
 		//given
+		List<Apartment> apartments = new ArrayList<>();
+		apartments.add(new Apartment(72.0, new BigDecimal(250000.0)));
+		apartments.add(new Apartment(48.0, new BigDecimal(350000.0)));
+		apartments.add(new Apartment(72.0, new BigDecimal(600000.0)));
+		
+		double expected = 1.0;
 		//when
+		double actual = ApartmentRater.calculateAverageRating(apartments);
 		//then	
+		assertEquals(expected, actual);
 	}
 	
 	@Test
 	void should_ThrowExeptionInCalculateAverageRating_When_EmptyApartmentList() {
 		//given
+		List<Apartment> apartments = new ArrayList<>();
 		//when
-		//then	
+		Executable executable = () -> ApartmentRater.calculateAverageRating(apartments);
+		//then
+		assertThrows(RuntimeException.class, executable);
+		
 	}
 
 }
