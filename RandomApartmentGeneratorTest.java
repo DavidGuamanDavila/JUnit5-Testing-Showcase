@@ -38,7 +38,21 @@ class RandomApartmentGeneratorTest {
 					() -> assertTrue(apartment.getPrice().compareTo(minApartmentPrice) >= 0),
 					() -> assertTrue(apartment.getPrice().compareTo(maxApartmentPrice) <= 0)
 					);		
+		}	
+	}
+	
+	@Nested
+	class GeneratorCustomParamsTests{
+		private RandomApartmentGenerator generator;
+		double minArea = 15.0;
+		double maxArea = minArea * MAX_MULTIPLIER;
+		BigDecimal minPricePerSquareMeter = new BigDecimal(5000.0);
+		
+		@BeforeEach
+		void setup() {
+			this.generator = new RandomApartmentGenerator(minArea, minPricePerSquareMeter);
 		}
+	
 	}
 
 }
