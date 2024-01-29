@@ -52,7 +52,26 @@ class RandomApartmentGeneratorTest {
 		void setup() {
 			this.generator = new RandomApartmentGenerator(minArea, minPricePerSquareMeter);
 		}
-	
+		
+		@RepeatedTest(10)
+		void should_GenerateCorrectApartment_When_DefaultMinAreaMinPrice() {
+			//given
+			double minArea = this.minArea;
+			double maxArea = minArea * MAX_MULTIPLIER;
+			BigDecimal minPricePerSquareMeter = this.minPricePerSquareMeter;
+			BigDecimal maxPricePerSquareMEter = minPricePerSquareMeter.multiply(new BigDecimal(MAX_MULTIPLIER));
+			//when
+			Apartment apartment = generator.generate();
+			//then
+			BigDecimal minApartmentPrice= new BigDecimal(apartment.getArea()).multiply(minPricePerSquareMeter);
+			BigDecimal maxApartmentPrice = new BigDecimal(apartment.getArea()).multiply(maxPricePerSquareMEter);
+			assertAll(
+					() -> assertTrue(apartment.getArea() >= minArea),
+					() -> assertTrue(apartment.getArea() <= maxArea),
+					() -> assertTrue(apartment.getPrice().compareTo(minApartmentPrice) >= 0),
+					() -> assertTrue(apartment.getPrice().compareTo(maxApartmentPrice) <= 0)
+					);		
+		}	
 	}
 
 }
