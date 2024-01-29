@@ -7,6 +7,7 @@ Welcome to my JUnit5 Testing Showcase! This repository demonstrates the skills a
 - **BMICalculatorTest.java**: A series of unit tests for a BMI calculator application.
 - **DietPlannerTest.java**: Tests for a diet planning tool, showcasing various test scenarios.
 These files exemplify how to write effective and practical unit tests in JUnit 5. They include examples of basic Test Driven Development (TDD) and demonstrate how to create real-world test scenarios.
+- **ApartmentRaterTest.java**: A series of unit tests for the Real Estate application.
 
 ## Setup and Running Tests
 These tests were made using:
