@@ -28,13 +28,23 @@ class Test01FirstMocks {
 	
 	@Test
 	void should_InvokePayment_When_Prepaid() {
-			// given
-
-			// when
-
-			// taken
-
+		// given
+		BookingRequest bookingRquest = new BookingRequest("1", LocalDate.of(2020, 01, 01),
+			LocalDate.of(2020, 01, 05), 2, true);
+		// when
+		bookingService.makeBooking(bookingRequest);
+		// taken
+		verify(paymentServiceMock, times(1)).pay(bookingRequest, 400.0);
+		verifyNoMoreInteractions(paymentServiceMock);
 	}
-
-
+	
+	@Test
+	void should_NotInvokePayment_When_NotPerepaid(){
+		//given
+		BookingRequest bookingRquest = new BookingRequest("1", LocalDate.of(2020, 01, 01),
+			LocalDate.of(2020, 01, 05), 2, false);
+		//when
+		bookingService.makeBooking(bookingRequest);
+		//then
+		verify(paymentServiceMock, never()).pay(any(), anyDouble());
 }
