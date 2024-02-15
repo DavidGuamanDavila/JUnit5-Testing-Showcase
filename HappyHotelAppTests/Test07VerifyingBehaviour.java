@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.*;
 
-class Test01FirstMocks {
+class Test07VeryfyingBehaviour {
 
 	private BookingService bookingService;
 	private PaymentService paymentServiceMock;
@@ -47,4 +47,5 @@ class Test01FirstMocks {
 		bookingService.makeBooking(bookingRequest);
 		//then
 		verify(paymentServiceMock, never()).pay(any(), anyDouble());
+}
 }
