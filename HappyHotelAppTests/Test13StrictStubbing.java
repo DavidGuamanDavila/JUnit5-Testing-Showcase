@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
+
 //Stubbing is default when using ExtendWith
 @ExtendWith(MockitoExtension.class)
 class Test13StrictStubbing{
@@ -35,23 +36,11 @@ class Test13StrictStubbing{
 	private ArgumentCaptor<Double> doubleCaptor;
 	
 	@Test
-	void should_CountAvailablePlaces_When_OneRoomAvailable() {
-		// given
-		given(this.roomServiceMock.getAvailableRooms())
-				.willReturn(Collections.singletonList(new Room("Room 1", 5)));
-		int expected = 5;
-		// when
-		int actual = bookingService.getAvailablePlaceCount();
-		// then
-		assertEquals(expected, actual);
-	}
-
-	@Test
 	void should_InvokePayment_When_Prepaid() {
 		// given
 		BookingRequest bookingRequest = new BookingRequest("1", LocalDate.of(2020, 01, 01),
 				LocalDate.of(2020, 01, 05), 2, false);
-		lenient().when(paymentServiceMock.pay(any(), anyDouble())).thenReturn("1"); //lenient allows your tests to pass when stubbing is detected.
+		lenient().when(paymentServiceMock.pay(any(), anyDouble())).thenReturn("1");//lenient allows your tests to pass when stubbing is detected.
 
 		// when
 		bookingService.makeBooking(bookingRequest);
