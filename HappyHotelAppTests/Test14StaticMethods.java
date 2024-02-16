@@ -15,7 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 //Stubbing is default when using ExtendWith
 @ExtendWith(MockitoExtension.class)
-class Test13StrictStubbing{
+class Test14StaticMethods{
 
 	@InjectMocks
 	private BookingService bookingService;
@@ -36,16 +36,22 @@ class Test13StrictStubbing{
 	private ArgumentCaptor<Double> doubleCaptor;
 	
 	@Test
-	void should_InvokePayment_When_Prepaid() {
-		// given
-		BookingRequest bookingRequest = new BookingRequest("1", LocalDate.of(2020, 01, 01),
-				LocalDate.of(2020, 01, 05), 2, false);
-		lenient().when(paymentServiceMock.pay(any(), anyDouble())).thenReturn("1");//lenient allows your tests to pass when stubbing is detected.
+	void should_CalculateCorrectPrice() {
+		try (MockedStatic<CurrencyConverter> mockedConverter = mockStatic(
+				CurrencyConverter.class)) {
+			// given
+			BookingRequest bookingRequest = new BookingRequest("1", LocalDate.of(2020, 01, 01),
+					LocalDate.of(2020, 01, 05), 2, false);
+			double expected = 400.0;
+			mockedConverter.when(() -> CurrencyConverter.toEuro(anyDouble())).thenReturn(400.0);
 
-		// when
-		bookingService.makeBooking(bookingRequest);
+			// when
+			double actual = bookingService.calculatePriceEuro(bookingRequest);
 
-		// then
-		// no exception is thrown
+			// then
+			assertEquals(expected, actual);
+		}
+
 	}
+    
 }
