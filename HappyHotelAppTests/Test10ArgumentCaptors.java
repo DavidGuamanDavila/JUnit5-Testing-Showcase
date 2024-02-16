@@ -10,7 +10,7 @@ import java.util.*;
 import org.junit.jupiter.api.*;
 import org.mockito.ArgumentCaptor;
 
-class Test07VeryfyingBehaviour {
+class Test10ArgumentCaptors{
 
 	private BookingService bookingService;
 	private PaymentService paymentServiceMock;
