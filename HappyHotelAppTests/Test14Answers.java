@@ -15,7 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 //Stubbing is default when using ExtendWith
 @ExtendWith(MockitoExtension.class)
-class Test13StrictStubbing{
+class Test14Answers{
 
 	@InjectMocks
 	private BookingService bookingService;
