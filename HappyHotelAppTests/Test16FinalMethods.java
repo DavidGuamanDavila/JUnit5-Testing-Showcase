@@ -7,7 +7,7 @@ import java.util.*;
 
 import org.junit.jupiter.api.*;
 
-class Test03ReturningCustomValues {
+class Test16FinalMethods{
 
 	private BookingService bookingService;
 	private PaymentService paymentServiceMock;
