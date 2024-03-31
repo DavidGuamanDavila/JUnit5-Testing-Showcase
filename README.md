@@ -23,7 +23,7 @@ These tests were made using:
   
 ## Acknowledgments
 - Udemy Course: "Practical Java Unit Testing with JUnit 5" by Adrien Weich.
-- Udemy Course: "[Mockito: Next-Level Java Unit Testin" by Adrien Weich.
+- Udemy Course: "Mockito: Next-Level Java Unit Testing" by Adrien Weich.
 - [Nasdaq-Verafin](https://verafin.com/) for inspiring the application of these skills in a professional setting.
 
 ## Certification
